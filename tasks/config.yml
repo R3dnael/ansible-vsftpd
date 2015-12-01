@@ -1,0 +1,16 @@
+---
+
+- name: Install conf file
+  template: 
+    src: etc-vsftpd.conf.j2
+    dest: /etc/vsftpd/vsftpd.conf
+    owner: root
+    group: root
+    mode: '0755'
+  notify: restart vsftpd
+  tags:
+    - networking
+    - vsftpd
+    - config
+
+

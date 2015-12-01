@@ -1,0 +1,11 @@
+---
+
+- name: Installing packages
+  yum:
+    pkg: "{{ item }}"
+    state: installed
+  with_items: vsftpd_packages
+  tags:
+    - networking
+    - vsftpd
+    - install

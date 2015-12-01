@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  author: leander
+  description: Installs and configures vsftpd
+  min_ansible_version: 1.7
+  platforms:
+    - name: CentOS
+  categories:
+    - networking
