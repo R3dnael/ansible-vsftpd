@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  sudo: yes
+  roles:
+    - R3dnael.vsftpd
+  vars:
+    vsftpd_service_enabled: yes
+    vsftpd_service_state: started
+    vsftpd_users:
+       - username: leander
+         name: leander
+         password: leander
