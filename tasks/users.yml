@@ -2,10 +2,9 @@
 
 - name: Adding users
   user: 
-    name: {{ item.username }}
-    comment: {{ item.username|default(item.username) }}
-    password: {{ item.password }}
-    shell: /sbin/nologin
+    name: "{{ item.username }}"
+    comment: "{{ item.username|default(item.username) }}"
+    password: "{{ item.password }}"
   with_items: vsftpd_users
   tags:
     - networking

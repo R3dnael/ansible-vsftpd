@@ -23,10 +23,10 @@ listen=YES
 anonymous_enable=NO
 #
 # Uncomment this to allow local users to log in.
-#local_enable=YES
+local_enable=YES
 #
 # Uncomment this to enable any form of FTP write command.
-#write_enable=YES
+write_enable=YES
 #
 # Default umask for local users is 077. You may wish to change this to 022,
 # if your users expect that (022 is used by most other ftpd's)
@@ -117,8 +117,8 @@ connect_from_port_20=YES
 # (Warning! chroot'ing can be very dangerous. If using chroot, make sure that
 # the user does not have write access to the top level directory within the
 # chroot)
-#chroot_local_user=YES
-#chroot_list_enable=YES
+chroot_local_user=NO
+chroot_list_enable=YES
 # (default follows)
 #chroot_list_file=/etc/vsftpd.chroot_list
 #
@@ -142,12 +142,10 @@ connect_from_port_20=YES
 # This string is the name of the PAM service vsftpd will use.
 pam_service_name=vsftpd
 #
-# This option specifies the location of the RSA certificate to use for SSL
-# encrypted connections.
-#rsa_cert_file={{ openssl_certs_path }}/{{ vsftpd_cert_file }}
-# This option specifies the location of the RSA key to use for SSL
-# encrypted connections.
-#rsa_private_key_file={{ openssl_keys_path }}/{{ vsftpd_key_file }}
+#userlist_deny=NO
+#userlist_enable=YES
+#userlist_file=/etc/vsftpd.allowed_users
+
 
 {% for key, value in vsftpd_config.iteritems() %}
 {{ key }}={{ value }}
