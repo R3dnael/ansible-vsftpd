@@ -3,9 +3,9 @@
 # http://www.ansibleworks.com/docs/playbooks_variables.html#id26
 #
 # vsftpd_users:
-#   - username: ftpuser
-#     name: FTP User
-#     password: '$1$somesalt$jezmI5TSY7mVTzHLgsK5L.'
+#   - username: leander
+#     name: leander
+#     password: leander
 # vsftpd_config:
 #   local_umask: 022
 #
