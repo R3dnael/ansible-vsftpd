@@ -117,8 +117,9 @@ chroot_local_user=YES
 # (Warning! chroot'ing can be very dangerous. If using chroot, make sure that
 # the user does not have write access to the top level directory within the
 # chroot)
+
 allow_writeable_chroot=YES
-#chroot_list_enable=YES
+
 # (default follows)
 #chroot_list_file=/etc/vsftpd.chroot_list
 #
@@ -145,7 +146,9 @@ pam_service_name=vsftpd
 #userlist_deny=NO
 #userlist_enable=YES
 #userlist_file=/etc/vsftpd.allowed_users
+
 local_root=/srv/shares
+
 
 {% for key, value in vsftpd_config.iteritems() %}
 {{ key }}={{ value }}
