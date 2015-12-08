@@ -6,8 +6,20 @@
     dest: /etc/vsftpd/vsftpd.conf
     owner: root
     group: root
-    mode: '0755'
+    mode: '0644'
   notify: restart vsftpd
+  tags:
+    - networking
+    - vsftpd
+    - config
+
+- name: Adding nologin shell
+  lineinfile: >
+    state=present
+    dest=/etc/shells
+    line="/usr/sbin/nologin"
+    regexp="^/usr/sbin/nologin"
+    insertafter=EOF
   tags:
     - networking
     - vsftpd
